@@ -6,7 +6,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
-import paper.plugin.earthPlugin.helper.console;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
 
