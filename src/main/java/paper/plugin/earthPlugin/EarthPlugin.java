@@ -30,11 +30,14 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
      * literal mechanics here, just @EventHandlers like onPlayerJoin event under this comment
      * also bro u can text me on discord anytime, don't use gpt, only use it to learn or ask something u don't know
      * don't make it code for u, please I beg u I love human code more (Intelli forced me to fix my grammar)
+     *
+     * right now this isnt really like, earth plugin yet, we gotta set stuff up and
+     * i gotta teach you how to do stuff so yeah
      */
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        console.print(event.getPlayer().getName() + " has joined");
+        //console.print(event.getPlayer().getName() + " has joined"); <-- pan like this is bad, put this in the playerjoineventhandle instead
         PlayerJoinEventHandle.onJoin(event.getPlayer());
     }
 }
