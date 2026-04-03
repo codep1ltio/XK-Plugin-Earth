@@ -29,7 +29,7 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     * i will help u with that, dw and also this file is for only event handlers, and basic stuff, dont code
     * literal mechanics here, just @EventHandlers like onPlayerJoin event under this comment
     * also bro u can text me on discord anytime, dont use gpt, only use it to learn or ask something u dont know
-    * dont make it code for u, please i beg u i love human code more.
+    * dont make it code for u, please i beg u i love human code more please, just please
     */
 
     @EventHandler
