@@ -11,15 +11,22 @@ import paper.plugin.earthPlugin.handler.ChatSystem;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
 
+    private static EarthPlugin instance;
+
     @Override
     public void onEnable() {
         // this is needed so thr @eventhandler/listener works
+        instance = this;
         getServer().getPluginManager().registerEvents(this, this);
     }
 
     @Override
     public void onDisable() {
         // ...
+    }
+
+    public static EarthPlugin getInstance() {
+        return instance;
     }
 
     /*
@@ -38,7 +45,6 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        //console.print(event.getPlayer().getName() + " has joined"); <-- pan like this is bad, put this in the playerjoineventhandle instead
         PlayerJoinEventHandle.onJoin(event.getPlayer());
     }
 

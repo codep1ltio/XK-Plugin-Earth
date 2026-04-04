@@ -2,11 +2,13 @@ package paper.plugin.earthPlugin.handler;
 
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import paper.plugin.earthPlugin.helper.chat;
 import paper.plugin.earthPlugin.helper.console;
 import paper.plugin.earthPlugin.helper.player;
+import paper.plugin.earthPlugin.helper.timer;
 
 import java.util.UUID;
 
@@ -16,15 +18,12 @@ import java.util.UUID;
 * else if it is change it cus then obv u gotta change it duh
 */
 
-public class PlayerJoinEventHandle extends JavaPlugin {
+public class PlayerJoinEventHandle {
     public static void onJoin(Player p) {
 
-        console.print(p.getName() + " has joined"); // <-- now this is the correct way
-
-        chat.broadcast("Hey!",
-                p.getName() + (!player.isNewPlayer(p) // <-- example on how to use isNewPlayer
-                        ? " Welcome Back!"
-                        : " Newbie ahh"),
-                NamedTextColor.YELLOW);
+        timer.wait(3000, () -> {
+            chat.broadcast("Hey!",
+                    p.getName() + ": I am in this biome: " + player.getPlayerBiome(p));
+        });
     }
 }
