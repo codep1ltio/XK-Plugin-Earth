@@ -3,11 +3,14 @@ package paper.plugin.earthPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
-import paper.plugin.earthPlugin.handler.ChatSystem;
+import paper.plugin.earthPlugin.handler.ChatSystemHandle;
+
+import paper.plugin.earthPlugin.logic.swimming;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
 
@@ -50,7 +53,12 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onChat(AsyncChatEvent event) {
-        event.setCancelled(true);
-        ChatSystem.playerChat(event);
+        event.setCancelled(true); // basically cancels the event
+        ChatSystemHandle.playerChat(event);
+    }
+
+    @EventHandler
+    public void onMove(PlayerMoveEvent p) {
+        if (p.getPlayer().isSwimming()) swimming.IsSwimming(p);
     }
 }

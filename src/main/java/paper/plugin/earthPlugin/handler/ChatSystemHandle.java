@@ -2,10 +2,9 @@ package paper.plugin.earthPlugin.handler;
 
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
-import org.bukkit.plugin.java.JavaPlugin;
 import paper.plugin.earthPlugin.helper.chat;
 
-public class ChatSystem {
+public class ChatSystemHandle {
     public static void playerChat(AsyncChatEvent event) {
         chat.broadcast(
                event.getPlayer().getName()
