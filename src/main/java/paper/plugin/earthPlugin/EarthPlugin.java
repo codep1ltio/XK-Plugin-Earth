@@ -4,8 +4,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import io.papermc.paper.event.player.AsyncChatEvent;
 
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
+import paper.plugin.earthPlugin.handler.chatSystem;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
 
@@ -38,5 +40,11 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         //console.print(event.getPlayer().getName() + " has joined"); <-- pan like this is bad, put this in the playerjoineventhandle instead
         PlayerJoinEventHandle.onJoin(event.getPlayer());
+    }
+
+    @EventHandler
+    public void onChat(AsyncChatEvent event) {
+        event.setCancelled(true);
+        chatSystem.playerChat(event);
     }
 }
