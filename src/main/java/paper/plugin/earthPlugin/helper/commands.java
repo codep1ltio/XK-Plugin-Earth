@@ -13,3 +13,5 @@ public class commands extends JavaPlugin {
         // ..
     }
 }
+
+// hello bro i will molest you
