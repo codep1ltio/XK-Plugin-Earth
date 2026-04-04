@@ -31,4 +31,9 @@ public class chat extends JavaPlugin {
         Bukkit.getServer().broadcast(Component.text(title).color(c));
         Bukkit.getServer().broadcast(Component.text(txt));
     }
+
+    // action bar
+    public static void sendActionBar(Player p, String txt, NamedTextColor c) {
+        p.sendActionBar(Component.text(txt).color(c));
+    }
 }
