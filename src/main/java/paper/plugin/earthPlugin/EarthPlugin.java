@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
-import paper.plugin.earthPlugin.handler.chatSystem;
+import paper.plugin.earthPlugin.handler.ChatSystem;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
 
@@ -45,6 +45,6 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onChat(AsyncChatEvent event) {
         event.setCancelled(true);
-        chatSystem.playerChat(event);
+        ChatSystem.playerChat(event);
     }
 }

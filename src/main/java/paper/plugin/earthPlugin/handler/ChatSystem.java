@@ -5,7 +5,7 @@ import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.plugin.java.JavaPlugin;
 import paper.plugin.earthPlugin.helper.chat;
 
-public class chatSystem extends JavaPlugin {
+public class ChatSystem extends JavaPlugin {
     public static void playerChat(AsyncChatEvent event) {
         chat.broadcast(
                event.getPlayer().getName()
