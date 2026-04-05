@@ -8,13 +8,12 @@ public class random {
         return ThreadLocalRandom.current().nextInt(min, maxExclusive);
     }
 
-    // chooses between 1, 2, or 3. if 1 is chosen, returns true
-    public static boolean chanceOneInThree() {
-        return randomInt(1, 4) == 1;
+    public static boolean ifChance(int num) {
+        return randomInt(0, num) == 1;
     }
 
     // does a cf, returns either true or false those stuff
-    public static boolean coinflip() {
+    public static boolean randBool() {
         return ThreadLocalRandom.current().nextBoolean();
     }
 }

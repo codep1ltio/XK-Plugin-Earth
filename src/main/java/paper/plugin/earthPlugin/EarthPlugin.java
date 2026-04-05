@@ -2,12 +2,14 @@ package paper.plugin.earthPlugin;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
 import paper.plugin.earthPlugin.handler.DataHandler;
+import paper.plugin.earthPlugin.handler.PlayerDeathEventHandle;
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
 import paper.plugin.earthPlugin.handler.ChatSystemHandle;
 
@@ -62,5 +64,10 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onMove(PlayerMoveEvent p) {
         if (p.getPlayer().isSwimming()) swimming.IsSwimming(p);
+    }
+
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent player) {
+        PlayerDeathEventHandle.playerDeath(player);
     }
 }
