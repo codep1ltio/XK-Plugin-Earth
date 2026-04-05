@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
+import paper.plugin.earthPlugin.handler.DataHandler;
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
 import paper.plugin.earthPlugin.handler.ChatSystemHandle;
 
@@ -21,6 +22,7 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
         // this is needed so thr @eventhandler/listener works
         instance = this;
         getServer().getPluginManager().registerEvents(this, this);
+        DataHandler.init(this);
     }
 
     @Override
