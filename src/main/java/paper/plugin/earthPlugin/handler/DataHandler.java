@@ -9,15 +9,10 @@ import java.util.UUID;
 
 public class DataHandler {
 
-    // Static fields so all methods can access them without an instance
     private static JavaPlugin plugin;
     private static File dataFile;
     private static YamlConfiguration dataConfig;
 
-    /**
-     * Call this once in your main plugin's onEnable().
-     * Example: DataHandler.init(this);
-     */
     public static void init(JavaPlugin pluginInstance) {
         plugin = pluginInstance;
 
