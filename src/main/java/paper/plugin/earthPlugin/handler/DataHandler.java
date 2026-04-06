@@ -37,7 +37,7 @@ public class DataHandler {
         return dataConfig.getLong(playerUUID + ".experience", 0L);
     }
 
-    public static void saveExperience(UUID playerUUID, long experience) {
+    public static void saveExperience(UUID playerUUID, float experience) {
         dataConfig.set(playerUUID + ".experience", experience);
         saveData();
     }

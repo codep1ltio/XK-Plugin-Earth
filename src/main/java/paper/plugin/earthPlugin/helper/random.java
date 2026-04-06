@@ -3,6 +3,9 @@ package paper.plugin.earthPlugin.helper;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class random {
+    public static float randomFloat(float min, float max) {
+      return ThreadLocalRandom.current().nextFloat(min, max);
+    }
 
     public static int randomInt(int min, int maxExclusive) {
         return ThreadLocalRandom.current().nextInt(min, maxExclusive);

@@ -13,8 +13,6 @@ public class chat {
     public static void message(Player p, String txt, NamedTextColor color) {
         p.sendMessage(Component.text(txt).color(color));
     }
-
-    // broadcasting is aura
     public static void broadcast(String txt) {
         Bukkit.getServer().broadcast(Component.text(txt));
     }

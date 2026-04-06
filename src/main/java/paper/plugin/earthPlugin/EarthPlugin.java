@@ -1,18 +1,25 @@
 package paper.plugin.earthPlugin;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import io.papermc.paper.event.player.AsyncChatEvent;
 
+import org.bukkit.scheduler.BukkitRunnable;
 import paper.plugin.earthPlugin.handler.DataHandler;
 import paper.plugin.earthPlugin.handler.PlayerDeathEventHandle;
 import paper.plugin.earthPlugin.handler.PlayerJoinEventHandle;
 import paper.plugin.earthPlugin.handler.ChatSystemHandle;
 
+import paper.plugin.earthPlugin.logic.experience;
 import paper.plugin.earthPlugin.logic.swimming;
 
 public final class EarthPlugin extends JavaPlugin implements Listener {
@@ -69,5 +76,10 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent player) {
         PlayerDeathEventHandle.playerDeath(player);
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent event) {
+        experience.addExperience(event.getPlayer(), 5);
     }
 }
