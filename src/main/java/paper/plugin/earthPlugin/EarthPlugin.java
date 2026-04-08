@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -81,5 +82,12 @@ public final class EarthPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         experience.addExperience(event.getPlayer(), 5);
+    }
+
+    @EventHandler
+    public void onEntityKill(EntityDeathEvent event) {
+        if (event.getEntity().getKiller() != null) {
+            experience.addExperience(event.getEntity().getKiller(), 10);
+        }
     }
 }
